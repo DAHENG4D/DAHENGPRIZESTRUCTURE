@@ -187,6 +187,8 @@ a {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     background-color: #f9f9f9;
+    /* Add this for horizontal scrolling on small screens */
+    overflow-x: auto; 
 }
 
 .prize-table {
@@ -194,6 +196,8 @@ a {
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 1.1em;
+    /* Ensure the table itself doesn't shrink more than its content needs */
+    min-width: 600px; /* Adjust as needed to prevent content squeezing on small screens */
 }
 
     .prize-table th, .prize-table td {
@@ -385,33 +389,16 @@ a {
         width: 100%;
     }
 
-    /* Table adjustments from previous response */
-    .results-card {
-        margin: 20px auto;
+    /* Table adjustments */
+    .prize-table {
+        /* Allow table to be wider than its container and enable horizontal scrolling */
+        min-width: 500px; /* Adjust this value as needed to ensure content fits without excessive squeezing */
+        font-size: 0.9em; /* Reduce font size for readability on smaller screens */
     }
 
-    .prize-label {
-        width: 45%;
-        font-size: 1.1em;
-    }
-
-    .prize-number {
-        font-size: 2em;
-        width: 55%;
-    }
-
-   .results-table th,
-    .results-table td {
-    border: 1px solid #ccc;
-    padding: 12px 8px;
-    text-align: center;
-    font-size: 1.8em;
-    font-weight: 700;
-    color: white; /* Change this from #333 to white */
-}
-
-    .results-table th {
-        font-size: 1em;
+    .prize-table th,
+    .prize-table td {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
     }
 
     .jackpot-item {
@@ -438,8 +425,13 @@ a {
         font-size: 1.8em;
     }
 
-    .results-table td {
-        font-size: 1em;
-        padding: 6px 3px;
+    .prize-table {
+        min-width: 400px; /* Further reduce min-width for very small screens if needed */
+        font-size: 0.8em; /* Further reduce font size */
+    }
+
+    .prize-table td,
+    .prize-table th {
+        padding: 6px 8px; /* Further reduce padding */
     }
 }
